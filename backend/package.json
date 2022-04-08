@@ -1,0 +1,17 @@
+{
+  "name": "videoshop",
+  "version": "1.0.0",
+  "description": "real time video calling app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon server.js"
+  },
+  "author": "Saqlain Mustaq Durjoy",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15",
+    "socket.io": "^4.4.1"
+  }
+}
