@@ -1,0 +1,54 @@
+.dashboard {
+    display: flex;
+    background-color: var(--background-color-light);
+    color: var(--text-color);
+    height: 100vh;
+}
+
+.dashboard__left__content {
+    flex-basis: 20%;
+    background-color: #02183a;
+    overflow-y: auto;
+}
+
+.dashboard__left__content__clock {
+    background-color: #02183a;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.dashboard__left__content__logo {
+    display: flex;
+    justify-content: center;
+}
+
+.dashboard__left__content__logo img {
+    width: 250px;
+    object-fit: contain;
+}
+
+.dashboard__left__content__clock {
+    color: #4da4c3;
+    font-size: 18px;
+}
+
+.dashboard__main__content {
+    flex-basis: 80%;
+    overflow-y: auto;
+}
+
+.dashboard__main__content__sections {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.dashboard__main__content__sections__top {
+    flex-basis: 80%;
+}
+
+.dashboard__main__content__sections__bottom {
+    flex-basis: 20%;
+    background-color: #02183a;
+}

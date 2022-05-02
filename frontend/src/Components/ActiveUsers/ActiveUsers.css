@@ -1,0 +1,31 @@
+.active__users__list {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 70vh;
+    margin-top: 30px;
+}
+
+.active__users__list__item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px 30px;
+}
+
+.active__users__list__item:hover {
+    background-color: #456858;
+}
+
+.active__users__list__item__image img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.active__users__list__item__name {
+    margin-left: 10px;
+    font-size: 20px;
+    color: #a9a9a9;
+}
