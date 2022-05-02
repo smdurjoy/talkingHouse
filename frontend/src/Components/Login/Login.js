@@ -6,17 +6,19 @@ import Button from "./Button";
 import './Login.css';
 import {setUsername} from "../../store/actions/dashboardActions";
 import {connect} from "react-redux";
-import mapDispatchToProps from "react-redux/lib/connect/mapDispatchToProps";
+import {registerNewUser} from "../../utils/wss/Connection";
 
 const Login = ({saveUserName}) => {
     const [username, setUsername] = useState('');
     const navigate = useNavigate();
+
     const handleSubmit = () => {
         if (!username) {
             alert("Enter your name first 😒 !")
             return;
         }
         saveUserName(username);
+        registerNewUser(username);
         navigate('/dashboard');
     }
 

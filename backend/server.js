@@ -13,7 +13,26 @@ const io = socket(server, {
     }
 });
 
+let peers = [];
+const broadcastEventTypes = {
+    ACTIVE_USERS: 'ACTIVE_USERS',
+    GROUP_CALL_ROOMS: 'GROUP_CALL_ROOMS'
+}
+
 io.on('connection', (socket) => {
     socket.emit('connection');
     console.log('New user connected');
+
+    socket.on('new-user', function ({username, socketId}) {
+        peers.push({
+            username,
+            socketId
+        })
+        console.log({peers})
+
+        io.sockets.emit('broadcast', {
+            event: broadcastEventTypes.ACTIVE_USERS,
+            activeUsers: peers
+        });
+    })
 })

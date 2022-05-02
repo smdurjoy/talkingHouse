@@ -1,6 +1,6 @@
 import './App.css';
 import {useEffect} from "react";
-import {connectToSocket} from "./utils/wss/Collection";
+import {connectToSocket} from "./utils/wss/Connection";
 import {
     BrowserRouter,
     Routes,
