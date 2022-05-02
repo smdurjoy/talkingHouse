@@ -28,11 +28,18 @@ io.on('connection', (socket) => {
             username,
             socketId
         })
-        console.log({peers})
 
         io.sockets.emit('broadcast', {
             event: broadcastEventTypes.ACTIVE_USERS,
             activeUsers: peers
         });
+    });
+
+    socket.on('disconnect', function () {
+        peers = peers.filter(peer => peer.socketId !== socket.id);
+        io.sockets.emit('broadcast', {
+            event: broadcastEventTypes.ACTIVE_USERS,
+            activeUsers: peers
+        });
     })
-})
+});
