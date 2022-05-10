@@ -1,0 +1,22 @@
+.callModal {
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    top: calc(50% - 150px);
+    left: calc(50% - 200px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: #02183a;
+    color: white;
+}
+
+.callModal__caller__name {
+    font-size: 30px;
+}
+
+.callModal__button__container {
+    margin-top: 20px;
+}
