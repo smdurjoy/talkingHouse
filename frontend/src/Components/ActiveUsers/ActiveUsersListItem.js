@@ -1,9 +1,10 @@
 import React from 'react';
 import defaultUserImg from '../../assets/default_user.jpg'
+import {callToOtherUser} from "../../utils/webRTC/webRTCHandler";
 
 const ActiveUsersListItem = ({user}) => {
     const handleCall = () => {
-        // TODO
+        callToOtherUser(user)
     }
     return (
         <div className='active__users__list__item' onClick={handleCall}>

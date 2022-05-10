@@ -1,7 +1,7 @@
 import React from 'react';
 import './IncomingCallModal.css'
 
-const IncomingCallModal = () => {
+const IncomingCallModal = ({callerUsername}) => {
 
     const handleAcceptButtonPress = () => {
         // :TODO
@@ -13,7 +13,7 @@ const IncomingCallModal = () => {
 
     return (
         <div className='direct_call_dialog'>
-            <span className='caller_name'>Caller</span>
+            <span className='caller_name'>{callerUsername} is calling ...</span>
             <div className='direct_call_dialog_button_container'>
                 <button className='direct_call_dialog_accept_button' onClick={handleAcceptButtonPress}>
                     Accept

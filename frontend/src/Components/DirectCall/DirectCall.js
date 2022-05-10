@@ -5,15 +5,16 @@ import RemoteVideoView from "../RemoteVideoView/RemoteVideoView";
 import CallingModal from "../CallingModal/CallingModal";
 import CallRejectModal from "../CallRejectModal/CallRejectModal";
 import IncomingCallModal from "../IncomingCallModal/IncomingCallModal";
+import {callStates} from "../../store/actions/callActions";
 
-const DirectCall = ({localStream, remoteStream}) => {
+const DirectCall = ({localStream, remoteStream, callState, callerUsername, callModalVisible}) => {
     return (
         <>
             <LocalVideoView localStream={localStream}/>
             {remoteStream && <RemoteVideoView remoteStream={remoteStream}/>}
-            {/*<CallingModal/>*/}
+            {callModalVisible && <CallingModal/>}
             {/*<CallRejectModal/>*/}
-            {/*<IncomingCallModal/>*/}
+            {callState === callStates.CALL_REQUESTED && <IncomingCallModal callerUsername={callerUsername}/>}
         </>
     );
 };
