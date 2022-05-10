@@ -28,7 +28,8 @@ const styles = {
         borderRadius: '5px',
         top: '5%',
         right: '5%',
-        position: 'absolute'
+        position: 'absolute',
+        backgroundColor: '#02183a'
     },
     videoElement: {
         height: '100%',
