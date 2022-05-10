@@ -1,12 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import logo from '../../assets/logo.png'
 import ActiveUsersList from "../ActiveUsers/ActiveUsersList";
+import * as webRTCHandler from '../../utils/webRTC/webRTCHandler'
+import DirectCall from "../DirectCall/DirectCall";
 
 const Dashboard = () => {
     const [clockText, setClockText] = useState('');
+
     useEffect(() => {
-        showTime();
-    })
+        webRTCHandler.getLocalStream();
+    }, [])
+
     const showTime = () => {
         let date = new Date();
         let h = date.getHours();
@@ -29,6 +33,7 @@ const Dashboard = () => {
         setClockText(time);
         setTimeout(showTime, 1000);
     }
+
     return (
         <div className='dashboard'>
             <div className='dashboard__left__content'>
@@ -36,14 +41,14 @@ const Dashboard = () => {
                     <img src={logo} alt='talkingHouse'/>
                 </div>
                 <div className='dashboard__left__content__clock'>
-                    <span>{clockText}</span>
+                    {/*<span>{clockText}</span>*/}
                 </div>
                 <ActiveUsersList/>
             </div>
             <div className='dashboard__main__content'>
                 <div className='dashboard__main__content__sections'>
                     <div className='dashboard__main__content__sections__top'>
-                        main panel
+                        <DirectCall/>
                     </div>
                     <div className='dashboard__main__content__sections__bottom'>
                         from bottom
